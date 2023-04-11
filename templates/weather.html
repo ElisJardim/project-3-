@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h2>Weather</h2>
+
+        <div class="row d-flex justify-content-center">
+            {% for wdata in weather %}
+                <div class="card text-white bg-dark mb-3 col text-center col-lg col-md-12 col-sm-6 col-12 p-2"
+                    style="max-width: 18rem;" alt="Responsive image">
+                    <div class="card-header text-warning"><span>{{ wdata.day }}</span></div>
+                    <div class="card-body">
+                        <p><img src="{{ wdata.img}}"></span></p>
+                        <p class="card-text text-white-50"><span>{{ wdata.temp }}</span></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

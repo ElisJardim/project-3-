@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chicago Travel Dashboard</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* Add your CSS styles here */
+		body {
+			font-family: Arial, sans-serif;
+			background-image: linear-gradient(to bottom,
+					rgba(255, 255, 255, 0.9),
+					rgba(255, 255, 255, 0.9)), url("images/travel.svg");
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #0077c0;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px;
+		}
+
+		.card {
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+			border-radius: 4px;
+			margin-bottom: 20px;
+			padding: 20px;
+			width: 400px;
+		}
+
+		.card h2 {
+			font-size: 24px;
+			margin-top: 0;
+		}
+
+		.card p {
+			margin-top: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		Travel Dashboard Planner
+	</header>
+	<div class="container">
+		<div class="card">
+			<h2>Flight Details</h2>
+			<p>Departure: <input type="date"></p>
+			<p>Return: <input type="date"></p>
+			<p>From: <input type="text"></p>
+			<p>To: <input type="text"></p>
+			<p>Class: <select>
+					<option>Economy</option>
+					<option>Premium Economy</option>
+					<option>Business</option>
+					<option>First Class</option>
+				</select></p>
+		</div>
+		<div class="card">
+			<h2>Accommodation</h2>
+			<p>Check-in: <input type="date"></p>
+			<p>Check-out: <input type="date"></p>
+			<p>Hotel: <input type="text"></p>
+			<p>Room Type: <select>
+					<option>Single</option>
+					<option>Double</option>
+					<option>Twin</option>
+					<option>Triple</option>
+				</select></p>
+		</div>
+		<div class="card">
+			<h2>Activities</h2>
+			<p>Check-in: <input type="date"></p>
+			<p>Check-out: <input type="date"></p>
+			<p>Destination: <input type="text"></p>
+			<p>Type of Activity: <select>
+					<option>Sightseeing</option>
+					<option>Adventure</option>
+					<option>Cultural</option>
+					<option>Relaxation</option>
+				</select></p>
+		</div>
+	</div>
+</body>
+
+</html>
