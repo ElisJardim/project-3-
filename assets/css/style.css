@@ -162,6 +162,17 @@ div .logo {
     height: 30px;
 }
 
+.map-position{
+    position: fixed, no-repeat;
+    left: 50%;
+    margin-left:60%;
+    min-width: 100%;
+    min-height: 50%;
+    width: auto;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media only screen and (min-width: 300px) {
     #front-logo {
         width: 250px;
