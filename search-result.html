@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title">Travel</title>
+
+  <!--Bootstrap Links -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Modal Link -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body onload="myFunction()">
+
+
+
+
+  <div class="container  px-0 " id="container-top">
+    <div class="row text-sm-center heading mx-0 px-0 head" id="row-top">
+      <div class=" col-lg-6 col-sm-12 text-sm-center ">
+        <h1 id="weatherTitle" class="cityStyle">
+          <span class="cityNameElW"></span>
+        </h1>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-sm-center text-lg-center" id="logo-cont">
+        <img id="mag" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white"
+          id="modal-btn" src="assets/images/magnifying.svg"></img> <img src="./assets/images/Travel.svg"
+          id="logoSmall" />
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+
+      <!-- Modal Header -->
+      <header class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+      </header>
+
+      <!-- Modal Container -->
+      <div class="w3-container topsearch">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+        <img src="./assets/images/Travel.svg" class="logo" id="logoModal" />
+
+        <form action="./search-result.html" id="modal-form">
+          <input type="text" id="inputValue" placeholder="Enter your destination">
+          <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weather -->
+  <div class="container bg-white">
+    <div class="row d-flex ">
+      <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+        style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Weather</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="card text-dark mb-3 col col1 text-center col-lg col-md-12 col-sm-6 col-12 p-2"
+        style="max-width: 18rem;">
+        <div class="card-header text-dark"><span id="day1"></span></div>
+        <div class="card-body">
+          <p><img id="Icon1"></span></p>
+          <p class="card-text text-dark-50"><span id="temp1"></span></p>
+        </div>
+      </div>
+      <div class="card text-dark mb-3 col col2 text-center col-lg col-md-12 col-sm-6 col-12"
+        style="max-width: 18rem;">
+        <div id="day2" class="card-header text-dark"></div>
+        <div class="card-body">
+          <p><img id="Icon2"></span></p>
+          <p id="temp2" class="card-text text-dark-50"></p>
+        </div>
+      </div>
+      <div class="card text-dark mb-3 col col3 text-center col-lg col-md-12 col-sm-6 col-12"
+        style="max-width: 18rem;">
+        <div id="day3" class="card-header text-dark"></div>
+        <div class="card-body">
+          <p><img id="Icon3"></span></p>
+          <p id="temp3" class="card-text text-dark-50"></p>
+        </div>
+      </div>
+      <div class="card text-dark mb-3 col col4 text-center col-lg col-md-12 col-sm-6 col-12"
+        style="max-width: 18rem;">
+        <div id="day4" class="card-header text-dark"></div>
+        <div class="card-body">
+          <p><img id="Icon4"></span></p>
+          <p id="temp4" class="card-text text-dark-50"></p>
+        </div>
+      </div>
+      <div class="card text-dark mb-3 col col5 text-center col-lg col-md-12 col-sm-6 col-12"
+        style="max-width: 18rem;">
+        <div id="day5" class="card-header text-dark"></div>
+        <div class="card-body">
+          <p><img id="Icon5"></span></p>
+          <p id="temp5" class="card-text text-dark-50"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flights -->
+  <div class="container bg-white">
+    <div class="row d-flex">
+      <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+        style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Flights</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2" style="max-width: 18rem;">
+        <div id="flight-rating19" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="flight-name19" class="card-title"></h5>
+          <p id="flight-address19" class="card-text text-white-50"></p>
+          <p id="flight-map19" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col2 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="flight-rating18" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="flight-name18" class="card-title"></h5>
+          <p id="flight-address18" class="card-text text-white-50"></p>
+          <p id="flight-map18" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col3 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="flight-rating17" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="flight-name17" class="card-title"></h5>
+          <p id="flight-address17" class="card-text text-white-50"></p>
+          <p id="flight-map17" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col4 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="flight-rating16" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="flight-name16" class="card-title"></h5>
+          <p id="flight-address16" class="card-text text-white-50"></p>
+          <p id="flight-map16" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col5 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="flight-rating15" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="flight-name15" class="card-title"></h5>
+          <p id="flight-address15" class="card-text text-white-50"></p>
+          <p id="flight-map15" class="card-text"></p>
+        </div>
+      </div>
+
+        <!-- Hotels -->
+  <div class="container bg-white">
+    <div class="row d-flex">
+      <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+        style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Hotels</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2" style="max-width: 18rem;">
+        <div id="hotel-rating19" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name19" class="card-title"></h5>
+          <p id="hotel-address19" class="card-text text-white-50"></p>
+          <p id="hotel-map19" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col2 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="hotel-rating18" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name18" class="card-title"></h5>
+          <p id="hotel-address18" class="card-text text-white-50"></p>
+          <p id="hotel-map18" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col3 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="hotel-rating17" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name17" class="card-title"></h5>
+          <p id="hotel-address17" class="card-text text-white-50"></p>
+          <p id="hotel-map17" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col4 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="hotel-rating16" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name16" class="card-title"></h5>
+          <p id="hotel-address16" class="card-text text-white-50"></p>
+          <p id="hotel-map16" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-dark mb-3 col col5 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+        <div id="hotel-rating15" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name15" class="card-title"></h5>
+          <p id="hotel-address15" class="card-text text-white-50"></p>
+          <p id="hotel-map15" class="card-text"></p>
+        </div>
+      </div>
+
+      <!-- Restaurants -->
+      <div class="container bg-white">
+        <div class="row d-flex">
+          <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+            style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Restaurants</h2>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2"
+            style="max-width: 18rem;">
+            <div id="resturant-rating19" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="resturant-name19" class="card-title"></h5>
+              <p id="resturant-address19" class="card-text text-white-50"></p>
+              <p id="resturant-map19" class="card-text resturantlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col2 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="resturant-rating18" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="resturant-name18" class="card-title"></h5>
+              <p id="resturant-address18" class="card-text text-white-50"></p>
+              <p id="resturant-map18" class="card-text resturantlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col3 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="resturant-rating17" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="resturant-name17" class="card-title"></h5>
+              <p id="resturant-address17" class="card-text text-white-50"></p>
+              <p id="resturant-map17" class="card-text resturantlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col4 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="resturant-rating16" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="resturant-name16" class="card-title"></h5>
+              <p id="resturant-address16" class="card-text text-white-50"></p>
+              <p id="resturant-map16" class="card-text resturantlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col5 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="resturant-rating15" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="resturant-name15" class="card-title"></h5>
+              <p id="resturant-address15" class="card-text text-white-50"></p>
+              <p id="resturant-map15" class="card-text resturantlink"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Attractions -->
+      <div class="container bg-white">
+        <div class="row d-flex">
+          <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+            style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Attractions</h2>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2"
+            style="max-width: 18rem;">
+            <div id="attraction-rating19" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="attraction-name19" class="card-title"></h5>
+              <p id="attraction-address19" class="card-text text-white-50"></p>
+              <p id="attraction-map19" class="card-text attractionlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col2 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="attraction-rating18" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="attraction-name18" class="card-title"></h5>
+              <p id="attraction-address18" class="card-text text-white-50"></p>
+              <p id="attraction-map18" class="card-text attractionlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col3 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="attraction-rating17" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="attraction-name17" class="card-title"></h5>
+              <p id="attraction-address17" class="card-text text-white-50"></p>
+              <p id="attraction-map17" class="card-text attractionlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col4 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="attraction-rating16" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="attraction-name16" class="card-title"></h5>
+              <p id="attraction-address16" class="card-text text-white-50"></p>
+              <p id="attraction-map16" class="card-text attractionlink"></p>
+            </div>
+          </div>
+
+          <div class="card text-dark mb-3 col col5 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
+            <div id="attraction-rating15" class="card-header text-warning"></div>
+            <div class="card-body">
+              <h5 id="attraction-name15" class="card-title"></h5>
+              <p id="attraction-address15" class="card-text text-white-50"></p>
+              <p id="attraction-map15" class="card-text attractionlink"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/search-result.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,5 @@
 
 # Dependencies
-
-
 import datetime as dt
 
 import sqlalchemy
@@ -11,10 +9,7 @@ from sqlalchemy import create_engine, func
 
 from flask import Flask, render_template
 
-
-# Database 
-
-
+# Database
 # create engine using the `city.sqlite` database file 
 engine = create_engine('sqlite:///data/city.sqlite')
 
@@ -23,14 +18,6 @@ Base = automap_base()
 
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
-# save references to the tables 
-# measurement = Base.classes.measurement
-# station = Base.classes.station
-# hotel = Base.classes.hotel
-
-# Flask Setup
-
 
 # create an instance of the Flask class 
 app = Flask(__name__)
