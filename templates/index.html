@@ -29,7 +29,7 @@
   <!-- Modal Link -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}" />
 </head>
 
 <body onload="myFunction()">
@@ -43,8 +43,8 @@
       </div>
       <div class="col-lg-6 col-sm-12 text-sm-center text-lg-center" id="logo-cont">
         <img id="mag" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white"
-          id="modal-btn" src="assets/images/magnifying.svg"></img> <img src="./assets/images/Travel.svg"
-          id="logoSmall" />
+          id="modal-btn" src="{{ url_for('static', filename='images/magnifying.svg' ) }}" />
+        <img src="{{ url_for('static', filename='/images/Travel.svg' ) }}" id="logoSmall" />
       </div>
     </div>
   </div>
@@ -63,9 +63,9 @@
       <div class="w3-container topsearch">
         <span onclick="document.getElementById('id01').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
-        <img src="./assets/images/Travel.svg" class="logo" id="logoModal" />
+        <img src="{{ url_for('static', filename='images/Travel.svg' ) }}" class="logo" id="logoModal" />
 
-        <form action="./index.html" id="modal-form">
+        <form action="{{ url_for('base') }}" method="post" id="modal-form">
           <input type="text" id="inputValue" placeholder="Enter your destination">
           <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
         </form>
@@ -126,9 +126,9 @@
         style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Flights</h2>
     </div>
     <div class="row d-flex text-dark">
-      <div class="col-md-4">From: <input type="text"></div>
-      <div class="col-md-4">Departure: <input type="date"></div>
-      <div class="col-md-4">Return: <input type="date"></div>
+      <div class="col-1 col-sm-4">From: <input type="text"/></div>
+      <div class="col-2 col-sm-4">Departure: <input type="date"/></div>
+      <div class="col-3 col-sm-4">Return: <input type="date"/></div>
     </div>
     <div class="row d-flex justify-content-center">
       <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2" style="max-width: 18rem;">
@@ -179,16 +179,17 @@
       <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
         style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Hotels</h2>
     </div>
-    <div class="row d-flex justify-content-center">
-      <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2" style="max-width: 18rem;">
-        <div id="hotel-rating1" class="card-header text-dark"></div>
-        <div class="card-body">
-          <p id="hotel-name1" class="card-text text-dark"></p>
-          <p id="hotel-address1" class="card-text text-dark"></p>
-        </div>
-      </div>
+    <div class="row d-flex justify-content-right">
+      <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2">
+        <label for="Hotel Name"> Choose a hotel:</label>
+        <select name="hoteldata" id='hoteldata'>
+          <option value="1"> {{ hotels[0].Name }} </option>
+          <option value="2"> {{ hotels[1].Name }} </option>
+          <option value="3"> {{ hotels[2].Name }} </option>
+          <option value="4"> {{ hotels[3].Name }} </option>
+          <option value="5"> {{ hotels[4].Name }} </option>
+        </select>
 
-      <div class="card text-dark mb-3 col col2 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
         <div id="hotel-rating2" class="card-header text-dark"></div>
         <div class="card-body">
           <p id="hotel-name2" class="card-text text-dark"></p>
@@ -196,46 +197,22 @@
         </div>
       </div>
 
-      <div class="card text-dark mb-3 col col3 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
-        <div id="hotel-rating3" class="card-header text-dark"></div>
-        <div class="card-body">
-          <p id="hotel-name3" class="card-text text-dark"></p>
-          <p id="hotel-address3" class="card-text text-dark"></p>
+
+
+      <!-- Attractions -->
+      <div class="container bg-white">
+        <div class="row d-flex">
+          <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
+            style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Attractions</h2>
         </div>
+        <div id="poi_map"></div>
       </div>
 
-      <div class="card text-dark mb-3 col col4 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
-        <div id="hotel-rating4" class="card-header text-dark"></div>
-        <div class="card-body">
-          <p id="hotel-name4" class="card-text text-dark"></p>
-          <p id="hotel-address4" class="card-text text-dark"></p>
-        </div>
-      </div>
 
-      <div class="card text-dark mb-3 col col5 col-lg col-md-12 col-sm-6 col-12" style="max-width: 18rem;">
-        <div id="hotel-rating5" class="card-header text-dark"></div>
-        <div class="card-body">
-          <p id="hotel-name5" class="card-text text-dark"></p>
-          <p id="hotel-address5" class="card-text text-dark"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Attractions -->
-  <div class="container bg-white">
-    <div class="row d-flex">
-      <h2 class="mb-3 text-dark col col1 col-lg col-md-12 col-sm-6 col-12"
-        style="font-size:xx-large;font-weight: bolder;max-width: 18rem;" id="titleText">Attractions</h2>
-    </div>
-    <div id="poi_map"></div>
-  </div>
-
-
-  <!-- Our JavaScript dile -->
-  <script type="text/javascript" src="./assets/js/logic_dynamic_POI.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/search-result.js"></script>
+      <!-- Our JavaScript dile -->
+      <script type="text/javascript" src="{{ url_for('static', filename='js/logic_dynamic_POI.js' ) }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="{{ url_for('static', filename='/js/search-result.js' ) }}"></script>
 </body>
 
 </html>
