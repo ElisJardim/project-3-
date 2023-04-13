@@ -18,6 +18,9 @@ Elisangela is going to Chicago in July 2023, so we decided to help her planning 
 * Bootstrap v4.3.1
 * Leaflet
 * [amcharts](https://www.amcharts.com/free-animated-svg-weather-icons/)
+* Python
+* Pandas 
+* Flask 
 
 ## API used
  * https://openweathermap.org/forecast16
