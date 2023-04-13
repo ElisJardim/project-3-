@@ -27,7 +27,7 @@ def get_hotels():
     return result
 
 def get_tickets():
-    sql ="SELECT Departure FROM tickets"
+    sql ="SELECT * FROM tickets"
     conn = get_db()
     cursor = conn.cursor()
     cursor.execute(sql)
