@@ -2,7 +2,7 @@
 
 ## Background
 
-Elisangela is going to Chicago in July 2023, so we as group decided to help her planning her vacation. 
+Elisangela is going to Chicago in July 2023, so we decided to help her planning her vacation. 
 
 ## Link to the Dashboard
 
@@ -43,7 +43,9 @@ Created by:
 * https://getbootstrap.com/docs/3.4/css/
 * https://flask.palletsprojects.com/en/2.2.x/
 * https://www.tripadvisor.com/HotelsNear-g35805-qORD-Chicago_Illinois.html'
+* https://leafletjs.com/reference.html#divicon-option
 
 
 ## Screenshots
 
+![Inicial Page](./assets/images/screenshot/html_screenshot_1.png)
