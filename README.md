@@ -4,9 +4,6 @@
 
 Elisangela is going to Chicago in July 2023, so we decided to help her planning her vacation. 
 
-## Link to the Dashboard
-
-
 ## Functionality
 
 
