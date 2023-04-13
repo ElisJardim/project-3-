@@ -11,8 +11,7 @@ function myFunction() {
    
 
     get5Day(cityValue);
-    cityCoord(cityValue);
-    photoSearch(cityValue);
+    // cityCoord(cityValue);
 }
 
 // Weather Dashboard
@@ -67,31 +66,31 @@ var get5Day = function (value) {
 }
 
 
-// get city's coordinates & uv index for main dashboard
-var cityCoord = function (data) {
+// // get city's coordinates & uv index for main dashboard
+// var cityCoord = function (data) {
 
-    // format api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&appid=386eafe2ba649945a853251bb7d3f25e";
+//     // format api url
+//     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + data + "&appid=386eafe2ba649945a853251bb7d3f25e";
 
-    // make a request to the url
-    fetch(apiUrl).then(function (response) {
+//     // make a request to the url
+//     fetch(apiUrl).then(function (response) {
 
-        // request was successful
-        if (response.ok) {
-            response.json().then(function (data) {
+//         // request was successful
+//         if (response.ok) {
+//             response.json().then(function (data) {
 
-                // get remaining data for dashboard
-                var lonValue = data['coord']['lon'];
-                var latValue = data['coord']['lat'];
+//                 // get remaining data for dashboard
+//                 var lonValue = data['coord']['lon'];
+//                 var latValue = data['coord']['lat'];
 
-                var coord = (latValue + "," + lonValue);
-                hotelSearch(coord);
-                cityFood(coord);
+//                 var coord = (latValue + "," + lonValue);
+//                 hotelSearch(coord);
+//                 cityFood(coord);
 
-            })
-        }
-    })
-}
+//             })
+//         }
+//     })
+// }
 
 
 // Modal

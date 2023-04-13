@@ -87,7 +87,7 @@ function createMap(pointsOfInterest) {
    
   }
   // Perform an API call. Call findCity when it completes.
-  target_city = 'Portland'
+  target_city = 'Chicago'
   geoKey = "e36b93f065f8427b8961aa2d1de2d5b1"
   url = (`https://api.geoapify.com/v1/geocode/search?text="${target_city}&format=json&apiKey=${geoKey}`)
   d3.json(url).then(findCity);

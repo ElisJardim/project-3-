@@ -19,12 +19,19 @@
     width: 100%;
 }
 
-button a {
-  text-decoration: none;
-  text-align: right;
+#poi_map {
+    height: 1000px;
+    width: 1000px;
+    padding: 50;
+    margin: 50;
 }
- 
-#logoSmall{
+
+button a {
+    text-decoration: none;
+    text-align: right;
+}
+
+#logoSmall {
     width: 35%;
     margin-top: 38px;
 }
@@ -42,15 +49,20 @@ button a {
     margin: 10px 180px;
 }
 
-#hotelTitle, #restaurantTitle, #weatherTitle {
+#hotelTitle,
+#restaurantTitle,
+#weatherTitle {
     color: black;
 }
 
 #cityImage {
     max-width: 100%;
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 0 auto;
+    /* Added */
+    float: none;
+    /* Added */
+    margin-bottom: 10px;
+    /* Added */
 }
 
 .heading {
@@ -80,7 +92,10 @@ div .logo {
 .front-page-container {
     margin: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .col {
@@ -92,31 +107,42 @@ div .logo {
     background: black;
 }
 
-.hotellink-p a:link, .hotellink-p a:visited {
-    color:white;
+.hotellink-p a:link,
+.hotellink-p a:visited {
+    color: white;
 }
 
 /* Modal CSS */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -125,7 +151,7 @@ div .logo {
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
 
 .close:hover,
 .close:focus {
@@ -152,20 +178,26 @@ div .logo {
     font-size: 17px;
     margin: 10px auto 0px auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 #submit {
     margin: 50px auto 50px auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     height: 30px;
 }
 
-.map-position{
+.map-position {
     position: fixed, no-repeat;
     left: 50%;
-    margin-left:60%;
+    margin-left: 60%;
     min-width: 100%;
     min-height: 50%;
     width: auto;
@@ -179,32 +211,36 @@ div .logo {
     }
 
     .front-page-container {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
     }
 
     div form {
         padding-top: 120px;
         position: absolute;
-    }  
+    }
 
     div input {
         height: 30px;
         width: 180px
-    };
+    }
+
+    ;
 
 
     form button {
         align-content: center;
     }
+
     .cityStyle {
         margin-top: 5px;
         font-size: 34px;
         font-weight: bold;
     }
-    #logoSmall{
+
+    #logoSmall {
         width: 50%;
         margin-top: 0px;
     }
@@ -220,7 +256,9 @@ div .logo {
         height: 30px;
         width: 180px;
         margin-top: 15px;
-    };
+    }
+
+    ;
 
 
     div button {
@@ -231,7 +269,7 @@ div .logo {
     div form {
         padding-top: 105px;
         position: relative;
-    }  
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -245,16 +283,21 @@ div .logo {
     div form {
         padding-top: 170px;
         position: relative;
-    }  
+    }
+
     div input {
         height: 30px;
         width: 200px;
-    };
+    }
+
+    ;
 
     div button {
         align-content: center;
         margin-top: 10px;
-    };
+    }
+
+    ;
 
 }
 
@@ -267,12 +310,14 @@ div .logo {
     div input {
         height: 30px;
         width: 350px;
-    };
+    }
+
+    ;
 
     div form {
         padding-top: 0px;
         position: relative;
-    }  
+    }
 
 }
 
@@ -286,65 +331,78 @@ div .logo {
     div input {
         height: 30px;
         width: 250px
-    };
+    }
+
+    ;
 
 
     div form {
-        padding-top: 200px;;
+        padding-top: 200px;
+        ;
         position: absolute;
-    }  
+    }
 
 }
+
 /*Header Media setup*/
-@media only screen and (max-width: 375px){
-    #container-top{
-       text-align: center;
+@media only screen and (max-width: 375px) {
+    #container-top {
+        text-align: center;
     }
-    #row-top{
+
+    #row-top {
         display: flex;
         flex-direction: column-reverse;
     }
-    #mag{
+
+    #mag {
         width: 15%;
     }
-   
+
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
     #mag {
         width: 10%;
     }
-    #row-top{
+
+    #row-top {
         display: flex;
         flex-direction: column-reverse;
     }
 }
-@media (min-width: 576px){
+
+@media (min-width: 576px) {
     #mag {
         width: 10%;
     }
-    #row-top{
+
+    #row-top {
         display: flex;
         flex-direction: column-reverse;
     }
 }
-@media (max-width: 575px){
-    #container-top{
+
+@media (max-width: 575px) {
+    #container-top {
         text-align: center;
-     }
+    }
+
     #mag {
         width: 15%;
     }
-    #row-top{
+
+    #row-top {
         display: flex;
         flex-direction: column-reverse;
     }
 }
-@media (min-width: 992px){
-    #row-top{
+
+@media (min-width: 992px) {
+    #row-top {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    
+
 }
