@@ -150,9 +150,11 @@
     <div class="row d-flex justify-content-right" style="max-width: 80%">
       <div class="card text-dark mb-3 col col1 col-lg col-md-12 col-sm-6 col-12 p-2">
         <label for="Hotel Name">Choose a hotel:</label>
-        <select name="hoteldata" id='hoteldata'>
+        <select name="hoteldata" id='hoteldata' onchange="optionChanged(this)">
+          <option value="" selected=selected>--Please choose a hotel to see the surrounding attractions--</option>
           {% for row in hotels %}
-          <option hotelName="{{row.Name}}" , hotelAddress="{{row.Address}}">
+          <option hotelName="{{row.Name}}" , hotelAddress="{{row.Address}}" hotelLatitude="{{row.Lattitude}}"
+            hotelLongitude="{{row.Longitude}}">
             {{row.Name}}, {{row.Address}}
           </option>
           {% endfor %}
@@ -174,7 +176,7 @@
 
 
   <!-- Our JavaScript dile -->
-  <script type="text/javascript" src="{{ url_for('static', filename='js/logic_dynamic_POI.js' ) }}"></script>
+  <script src="{{ url_for('static', filename='js/logic_dynamic_POI.js' ) }}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="{{ url_for('static', filename='/js/search-result.js' ) }}"></script>
 </body>

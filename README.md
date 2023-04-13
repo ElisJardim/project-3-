@@ -52,4 +52,4 @@ Created by:
 
 ## Screenshots
 
-![Inicial Page](./assets/images/screenshot/html_screenshot_1.png)
+![Inicial Page](./static/images/enter_your_destionation.png)
